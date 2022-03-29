@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
 import HomePage from "../pages/home.vue";
-import TopicPage from "../pages/topic.vue";
+import StartPage from "../pages/start.vue";
 
 const routes: RouteRecordRaw[] = [
   {
@@ -10,9 +10,9 @@ const routes: RouteRecordRaw[] = [
     component: HomePage,
   },
   {
-    path: "/:topic",
-    name: "topic",
-    component: TopicPage,
+    path: "/start",
+    name: "start",
+    component: StartPage,
   },
 ];
 

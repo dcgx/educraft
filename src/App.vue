@@ -4,8 +4,21 @@
 </script>
 
 <template>
-  <router-view></router-view>
+  <default-layout>
+    <router-view></router-view>
+  </default-layout>
 </template>
+
+<script lang="ts">
+import DefaultLayout from "./layouts/default.vue";
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  components: { DefaultLayout },
+  setup() {},
+});
+</script>
+
 
 <style>
 #app {
@@ -17,3 +30,4 @@
   margin-top: 60px;
 }
 </style>
+
