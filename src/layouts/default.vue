@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="background: #235390">
     <header class="header">
       <div class="logo">trifuzt</div>
     </header>
@@ -11,10 +11,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from "vue"
 
 export default defineComponent({
   name: "DefaultLayout",
   setup() {},
-});
+})
 </script>

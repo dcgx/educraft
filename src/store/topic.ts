@@ -1,10 +1,9 @@
-import { defineStore } from "pinia";
+import { defineStore } from "pinia"
 
-export const useTopicStore = defineStore("topoc", {
+export const useTopicStore = defineStore("topic", {
   state: () => ({
-    currentTopic: "Música",
     topics: [],
   }),
 
   actions: () => ({}),
-});
+})

@@ -1,5 +1,5 @@
 <template>
   <div>
-    {{ $route.params.topic }}
+    {{ $route.params.topicId }}
   </div>
 </template>
