@@ -65,9 +65,11 @@ h2 {
   margin-bottom: 20px;
   border-radius: 20px;
   min-height: 200px;
+  background: #fffbff;
 }
 .topic-list li h2 {
   letter-spacing: 1px;
+  font-size: 1.5rem;
 }
 .topic-list li h2,
 .topic-list li p {
