@@ -1,8 +1,8 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router"
+import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
-import HomePage from "../pages/home.vue"
-import StartPage from "../pages/start.vue"
-import TopicPage from "../pages/topic.vue"
+import HomePage from "../pages/home.vue";
+import LearnPage from "../pages/learn.vue";
+import TipsPage from "../pages/tips.vue";
 
 const routes: RouteRecordRaw[] = [
   {
@@ -11,20 +11,22 @@ const routes: RouteRecordRaw[] = [
     component: HomePage,
   },
   {
-    path: "/start",
-    name: "start",
-    component: StartPage,
+    path: "/learn",
+    name: "learn",
+    component: LearnPage,
+    meta: { layout: "learn" },
   },
   {
-    path: "/topic/:topicId",
-    name: "topic",
-    component: TopicPage,
+    path: "/tips",
+    name: "tips",
+    component: TipsPage,
+    meta: { layout: "learn" },
   },
-]
+];
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
-})
+});
 
-export default router
+export default router;

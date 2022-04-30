@@ -1,25 +1,24 @@
 <template>
-  <section class="flex justify-center items-center p-14">
-    <div>
-      <img
-        src="https://d35aaqx5ub95lt.cloudfront.net/images/331a32943ff73be28537dfc7469d5639.svg"
-        alt=""
-      />
+  <div>
+    <div class="grid grid-cols-2 max-w-screen-xl mx-auto mt-60">
+      <div class="text-left">
+        <h2 class="title">
+          En <span class="text-primary">Edulingo</span> aprendes a tu ritmo.
+        </h2>
+        <p class="font-sans">
+          Si quieres triunfar, no te quedes mirando la escalera. Empieza a
+          subir, escalón por escalón, hasta que llegues a la cima.
+        </p>
+      </div>
+      <div class="border h-52"></div>
     </div>
-
-    <div class="w-3/5 m-10">
-      <h1 class="mb-8">
-        ¡La forma divertida, efectiva y gratis de aprender un idioma!
-      </h1>
-      <button class="btn btn-primary" @click="onStart">Empezar</button>
-    </div>
-  </section>
+  </div>
 </template>
 
 <script lang="ts" setup>
-import { useRouter } from "vue-router"
+import { useRouter } from "vue-router";
 
-const router = useRouter()
+const router = useRouter();
 
-const onStart = () => router.push({ name: "start" })
+const onStart = () => router.push({ name: "start" });
 </script>

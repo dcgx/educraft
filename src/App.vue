@@ -4,30 +4,24 @@
 </script>
 
 <template>
-  <default-layout>
+  <component :is="layout">
     <router-view></router-view>
-  </default-layout>
+  </component>
 </template>
 
 <script lang="ts">
 import DefaultLayout from "./layouts/default.vue";
+import LearnLayout from "./layouts/learn.vue";
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  components: { DefaultLayout },
+  components: { DefaultLayout, LearnLayout },
   setup() {},
+  computed: {
+    layout() {
+      const layout = this.$route.meta.layout || "default";
+      return layout + "-layout";
+    },
+  },
 });
 </script>
-
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
-

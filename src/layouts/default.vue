@@ -1,10 +1,23 @@
 <template>
-  <div style="background: #235390">
-    <header class="header flex justify-between">
-      <div class="logo">trifuzt</div>
+  <div>
+    <header class="flex justify-between items-center m-4 top-0">
+      <h1 class="text-blue-900 text-3xl font-bold">EduLingo</h1>
+      <router-link
+        to="/learn"
+        class="
+          font-sans
+          border-2
+          font-semibold
+          border-blue-900
+          rounded-full
+          py-2
+          px-5
+        "
+      >
+        Ingresar
+      </router-link>
     </header>
-
-    <main class="main-wrapper">
+    <main>
       <slot></slot>
     </main>
   </div>
