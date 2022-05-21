@@ -1,12 +1,10 @@
-# TriFuzt
+# QuizLingo
 
-This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-## Getting Started
+## About the project
 
 ## Build with
 
-- Vite
-- Vue 3 (TypeScript)
-- Vue Router 4
-- Pinia
+-   [Vite](https://vitejs.dev/)
+-   [Vue 3 (TypeScript)](https://vuejs.org/)
+-   [Vue Router 4](https://router.vuejs.org/guide/)
+-   [Pinia](https://pinia.vuejs.org/)
