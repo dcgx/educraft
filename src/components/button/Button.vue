@@ -33,14 +33,14 @@ export default defineComponent({
 
 <style lang="scss">
 .btn {
-  padding: 6px 12px;
+  padding: 6px 5rem;
   font-weight: 700;
   font-size: 1rem;
   border: solid;
   border-radius: 16px;
   border-width: 2px 2px 4px;
-  width: 100%;
-
+  width: auto;
+  background: #fab731;
   &.outlined {
     background: #fff;
   }

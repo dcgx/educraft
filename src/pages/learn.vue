@@ -1,5 +1,8 @@
 <template>
   <div class="pt-14 max-w-screen-xl mx-auto">
+    <div class="border border-white">
+      <h2>Elegir dificultad</h2>
+    </div>
     <div class="flex">
       <div class="border-red-700 flex flex-1 justify-center">
         <div class="grid grid-rows-5">

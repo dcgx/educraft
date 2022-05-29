@@ -49,11 +49,7 @@
             74</a
           >
           <div class="border-gray-200 rounded-full border-4">
-            <img
-              class="w-8 rounded-full"
-              src="https://avatars.githubusercontent.com/u/27701073?v=4"
-              alt=""
-            />
+            <img class="w-8 rounded-full" alt="" />
           </div>
         </div>
       </nav>

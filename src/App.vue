@@ -4,9 +4,9 @@
 </script>
 
 <template>
-  <component :is="layout">
+  <div>
     <router-view></router-view>
-  </component>
+  </div>
 </template>
 
 <script lang="ts">
