@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/howler": "^2.2.7",
     "@vueuse/core": "^8.3.1",
     "howler": "^2.2.3",
     "pinia": "^2.0.12",
