@@ -15,13 +15,12 @@
             justify-start
             mt-5
             items-center
-            border border-white
           "
         >
           <e-button @click="$router.push('/difficulty')">Get Started</e-button>
         </div>
       </div>
-      <div class="w-full px-36 flex items-center border border-white"></div>
+      <div class="w-full px-36 flex items-center "></div>
     </div>
   </div>
 </template>
