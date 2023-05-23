@@ -1,28 +1,17 @@
 <template>
-  <div>
-    <div class="grid grid-cols-2 max-w-screen-xl mx-auto mt-60">
-      <div class="text-left">
-        <h2 class="title">
-          <span class="text-primary">Trivilingo</span>
+    <div class="h-screen flex items-start justify-center flex-col">
+        <h2 class="text-5xl font-bold text-slate-700">
+            En <span class="text-blue-900">Edulingo</span> aprendes <br />
+            a tu ritmo.
         </h2>
-        <p class="font-sans text-2xl mt-2">
-          A trivia app to have some fun and learn
+        <p class="py-4">
+            Si quieres triunfar, no te quedes mirando la escalera. Empieza a
+            subir, escalón por escalón, hasta que llegues a la cima.
         </p>
-        <div
-          class="
-            w-full
-            flex
-            justify-start
-            mt-5
-            items-center
-          "
-        >
-          <e-button @click="$router.push('/difficulty')">Get Started</e-button>
-        </div>
-      </div>
-      <div class="w-full px-36 flex items-center "></div>
+        <button class="border-2 border-blue-900 px-4 py-1 rounded-md">
+            <i class="fas fa-play"></i>Saber Más
+        </button>
     </div>
-  </div>
 </template>
 
 <script lang="ts" setup>
