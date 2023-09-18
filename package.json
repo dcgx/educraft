@@ -4,8 +4,11 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
+    "dev:api": "wrangler dev api/index.ts",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "build:api": "esbuild --bundle src/server.ts --format=esm --outfile=dist/_worker.js",
+    "preview": "vite preview",
+    "publish:api": "wrangler publish api/index.ts"
   },
   "dependencies": {
     "@prisma/client": "^5.3.1",
