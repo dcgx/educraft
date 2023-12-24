@@ -2,10 +2,14 @@
 export default defineNuxtConfig({
   modules: [
     '@sidebase/nuxt-auth',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/color-mode'
   ],
   typescript: {
     shim: false
   },
-  runtimeConfig: {}
+  runtimeConfig: {},
+  colorMode: {
+    classSuffix: ''
+  }
 })
