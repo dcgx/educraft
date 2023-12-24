@@ -21,7 +21,7 @@
         <ThemeToggle class="mr-3" />
         <div class="flex items-center">
           <template v-if="session && session.user">
-            <!-- <UserAccountNav :user="session.user" /> -->
+            <UserAccountDropdown :user="session.user" />
           </template>
           <template v-else>
             <!-- <SignInButton /> -->
@@ -34,6 +34,7 @@
 
 <script setup>
 import ThemeToggle from "../theme/ThemeToggle.vue";
+import UserAccountDropdown from '../user/UserAccountDropdown.vue';
 const session = ref(null);
 </script>
 
