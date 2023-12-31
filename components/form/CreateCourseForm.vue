@@ -33,7 +33,7 @@
         },
       }"
     >
-      <FormField v-slot="{ componentField }" name="username">
+      <FormField v-slot="{ componentField }" name="title">
         <FormItem class="grid items-center justify-start gap-5 grid-cols-10">
           <div class="col-span-1">
             <label>Unit {{ index + 1 }}</label>
@@ -41,14 +41,16 @@
           <div class="col-span-8">
             <Input
               type="text"
+              :name="componentField.name"
               placeholder="AWS Cloud Practioner Roadmap"
+              v-model="unit.title"
               v-bind="componentField"
             />
           </div>
           <div class="col-span-1">
             <button
               type="button"
-              @click="removeUnitById(unit.id)"
+              @click="removeUnitByUniqueId(unit.uuid)"
               class="hover:text-red-500 cursor-pointer transition duration-100"
             >
               <TrashIcon class="w-5 h-5 cursor-pointer" />
@@ -77,6 +79,7 @@
 </template>
 
 <script setup lang="ts">
+import { v4 as uuidv4 } from "uuid";
 import { useForm } from "vee-validate";
 import { TrashIcon, MinusIcon, PlusIcon } from "lucide-vue-next";
 import { Button } from "@/components/ui/button";
@@ -93,7 +96,7 @@ import { toTypedSchema } from "@vee-validate/zod";
 import * as z from "zod";
 
 type Unit = {
-  id: number;
+  uuid: string;
   title: string;
 };
 
@@ -111,7 +114,7 @@ const form = useForm({
 
 const addUnit = () => {
   units.value.push({
-    id: units.value.length + 1,
+    uuid: uuidv4(),
     title: `Unit ${units.value.length + 1}`,
   });
 };
@@ -120,8 +123,8 @@ const removeUnit = () => {
   units.value.pop();
 };
 
-const removeUnitById = (id: number) => {
-  units.value = units.value.filter((unit) => unit.id !== id);
+const removeUnitByUniqueId = (uuid: string) => {
+  units.value = units.value.filter((unit) => unit.uuid !== uuid);
 };
 
 const onSubmit = form.handleSubmit((values) => {
