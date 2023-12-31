@@ -13,5 +13,6 @@ export default defineNuxtConfig({
   runtimeConfig: {},
   colorMode: {
     classSuffix: ''
-  }
+  },
+  css: ['~/assets/css/tailwind.css'],
 })

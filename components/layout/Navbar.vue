@@ -7,7 +7,7 @@
     >
       <router-link to="/gallery" class="items-center hidden gap-2 sm:flex">
         <p
-          class="rounded-lg border-2 border-b-4 border-r-4 border-black px-2 py-1 text-xl font-bold transition-all hover:-translate-y-[2px] md:block dark:border-white"
+          class="rounded-lg px-2 py-1 text-xl font-bold transition-all hover:-translate-y-[2px] md:block dark:border-white"
         >
           Educraft
         </p>
@@ -34,7 +34,7 @@
 
 <script setup>
 import ThemeToggle from "../theme/ThemeToggle.vue";
-import UserAccountDropdown from '../user/UserAccountDropdown.vue';
+import UserAccountDropdown from "../user/UserAccountDropdown.vue";
 const session = ref(null);
 </script>
 

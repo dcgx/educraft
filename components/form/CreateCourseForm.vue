@@ -1,10 +1,17 @@
 <template>
-  <form @submit="onSubmit">
+  <form
+    @submit="onSubmit"
+    class="w-full border border-slate-800 px-5 py-6 rounded-lg"
+  >
     <FormField v-slot="{ componentField }" name="username">
       <FormItem>
         <label>Title</label>
         <FormControl>
-          <Input type="text" placeholder="shadcn" v-bind="componentField" />
+          <Input
+            type="text"
+            placeholder="AWS Cloud Practioner Roadmap"
+            v-bind="componentField"
+          />
         </FormControl>
         <FormDescription> This is your public display name. </FormDescription>
         <FormMessage />
@@ -12,6 +19,7 @@
     </FormField>
 
     <div
+      class="mt-5"
       v-for="(unit, index) in units"
       :key="index"
       v-motion="{
@@ -24,14 +32,53 @@
           opacity: 1,
         },
       }"
-    ></div>
+    >
+      <FormField v-slot="{ componentField }" name="username">
+        <FormItem class="grid items-center justify-start gap-5 grid-cols-10">
+          <div class="col-span-1">
+            <label>Unit {{ index + 1 }}</label>
+          </div>
+          <div class="col-span-8">
+            <Input
+              type="text"
+              placeholder="AWS Cloud Practioner Roadmap"
+              v-bind="componentField"
+            />
+          </div>
+          <div class="col-span-1">
+            <button
+              type="button"
+              @click="removeUnitById(unit.id)"
+              class="hover:text-red-500 cursor-pointer transition duration-100"
+            >
+              <TrashIcon class="w-5 h-5 cursor-pointer" />
+            </button>
+          </div>
+          <FormMessage />
+        </FormItem>
+      </FormField>
+    </div>
 
-    <Button type="button"> Create course </Button>
+    <div class="flex items-center gap-5 justify-end mt-5">
+      <Button @click="removeUnit" type="button" variant="secondary">
+        <MinusIcon class="text-red-500 mr-2" />
+        Remove unit
+      </Button>
+      <Button @click="addUnit" type="button" variant="secondary">
+        <PlusIcon class="text-green-500 mr-2" />
+        Add Unit
+      </Button>
+    </div>
+
+    <div class="flex mt-10">
+      <Button class="w-full"> Create course! </Button>
+    </div>
   </form>
 </template>
 
 <script setup lang="ts">
 import { useForm } from "vee-validate";
+import { TrashIcon, MinusIcon, PlusIcon } from "lucide-vue-next";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -42,11 +89,15 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { motion, AnimatePresence } from "framer-motion";
 import { toTypedSchema } from "@vee-validate/zod";
 import * as z from "zod";
 
-const units = ref<string[]>([]);
+type Unit = {
+  id: number;
+  title: string;
+};
+
+const units = ref<Unit[]>([]);
 
 const formSchema = toTypedSchema(
   z.object({
@@ -57,6 +108,21 @@ const formSchema = toTypedSchema(
 const form = useForm({
   validationSchema: formSchema,
 });
+
+const addUnit = () => {
+  units.value.push({
+    id: units.value.length + 1,
+    title: `Unit ${units.value.length + 1}`,
+  });
+};
+
+const removeUnit = () => {
+  units.value.pop();
+};
+
+const removeUnitById = (id: number) => {
+  units.value = units.value.filter((unit) => unit.id !== id);
+};
 
 const onSubmit = form.handleSubmit((values) => {
   console.log("Form submitted!", values);
